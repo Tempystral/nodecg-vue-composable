@@ -18,7 +18,7 @@ export function useReplicant<T>(name: string, namespace: string | undefined, opt
     return useReplicantRaw<T>(name, namespace, opts).reactiveReplicant
 }
 
-function useReplicantRaw<T>(name: string, namespace: string | NodeCG.Replicant.Options<T> | undefined, opts: NodeCG.Replicant.Options<T> | undefined) {
+function useReplicantRaw<T>(name: string, namespace: string | ReplicantOptions<T> | undefined, opts: ReplicantOptions<T> | undefined) {
 	if (isRef(name)) {
 		console.warn(`Tried to create a StaticReplicant using a reactive name (${name.value})`)
         throw Error(`Tried to create a StaticReplicant using a reactive name (${name.value})`)
